@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import logo from './components/FCClogo.png'
+import Buttom from './components/Buttom';
 
 function App() {
+
+  const useClick = () => {
+    console.log('Click');
+  }
+  const CounterRestart = () => {
+    console.log('Reiniciar')
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='Logo'>
+        <img  className='FFCimg'
+        alt='FFC' src={logo}/>
+      </div>
+      <div className='MainContainer'>
+        <Buttom text='click' isClick={true} useClick={useClick}/>
+        <Buttom text='Reset' isClick={false} useClick={CounterRestart}/>
+      </div>
     </div>
   );
 }
